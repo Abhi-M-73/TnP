@@ -730,6 +730,15 @@
 // console.log(fact);  //120
 
 // 	27.	Write a nested loop to print a 3x3 grid of numbers.
+// let num = 0;
+// for (let i = 0; i < 3; i++) {
+//     let str = '';
+//     for (let j = 0; j < 3; j++) {
+//         str += num ; 
+//         num++;
+//     } 
+//     console.log(str); 
+// }
 
 
 // 	28.	Use a for loop to reverse an array [1, 2, 3, 4].
@@ -902,8 +911,25 @@
 
 
 // 	48.	Create a function to find the largest number in an array.
+// function findLargest(arr) {
+//     let LargeVal = [0];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (LargeVal < arr[i]) {
+//             LargeVal = arr[i];
+//         }
+//     }
+//     return LargeVal
+// }
+// console.log(findLargest([5, 8, 12, 38, 10 , 5]))   // 38
+
 // 	49.	Write a function that converts a string to kebab-case (e.g., "Hello World" → "hello-world").
-function kebabCase(str) {}
+// function kebabCase(str) {
+//     return str
+//         .replace(/([a-z])([A-Z])/g, '$1-$2')  // Handle camelCase
+//         .replace(/\s+/g, '-')                  // Replace spaces with hyphens
+//         .toLowerCase();                        // Convert to lowercase
+// }
+// console.log(kebabCase("Hello World"))   // hello-world
 
 
 // 	50.	Create a function that logs "Hello, World!" every time it is called.
@@ -1164,9 +1190,18 @@ function kebabCase(str) {}
 // console.log(removeWhiteSpace("   hello   "));
 
 // 	80.	Create a function to count the number of vowels in a string.
-function countVowel() {
+// function countVowel(str) {
+//     let vowelCount = 0;
+//     let vowel = ['a', 'e', 'i', 'o', 'u'];
+//     for (let i = 0; i < str.length; i++) {
+//         if (vowel.includes(str[i].toLowerCase())){
+//             vowelCount++;
+//         }
+//     }
+//     return vowelCount;
+// }
+// console.log(countVowel("abhishek"));
 
-}
 
 // Mixed Practice (20 Questions)
 // 	81.	Write a function that accepts an array of numbers and returns only the even numbers.
@@ -1210,6 +1245,13 @@ function countVowel() {
 // ***
 // ****
 
+// let row = 4;
+// let star = '';
+// for (let i = 0; i < row; i++) {
+//     star += "*"
+//     console.log(star);
+// }
+
 // 	85.	Write a function that returns the square of each number in an array.
 // function findSquare(arr) {
 //     return arr.map((elem) => Math.pow(elem, 2));
@@ -1251,7 +1293,12 @@ function countVowel() {
 // console.log(isEmpty);
 
 // 	91.	Write a program to fetch the current date and format it as DD/MM/YYYY.
-let date = new Date();
+// let date = new Date();
+// let currentDate = date.getDate();
+// let currentMonth = date.getMonth() + 1;
+// let currentYear = date.getFullYear();
+// console.log(`Date is ${currentDate}/${currentMonth}/${currentYear}`);
+
 
 
 // 	92.	Write a program to find the smallest number in an array.
@@ -1260,6 +1307,22 @@ let date = new Date();
 // console.log(minVal)
 
 // 	93.	Create a function to return the Fibonacci sequence up to n terms.
+// function getFibonacciSequence(val) {
+//     let a = 0;
+//     let b = 1;
+//     let next;
+//     if (val > b) {
+//         console.log(b)
+//     }
+//     for (let i = 2; i < val; i++) {
+//         next = a + b;
+//         console.log(next)
+//         a = b;
+//         b = next;
+//     }
+// }
+
+// getFibonacciSequence(5);
 
 
 // 	94.	Use a try...catch block to handle division by zero.
@@ -1278,10 +1341,33 @@ let date = new Date();
 
 
 // 	95.	Write a program to find the index of the first vowel in a string.
+// let str = "abhi";
+// let vowel = ['a', 'e', 'i', 'o', 'u'];
+// for (let i = 0; i < str.length; i++) {
+//     if (vowel.includes(str[i])) {
+//         console.log(str[i]);
+//         break;
+//     }
+// }
+
 
 // 	96.	Create a function that accepts an array and returns only unique values.
+// function getUniqueVal(arr) {
+//     let unique = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (!unique.includes(arr[i])) {
+//             unique.push(arr[i]);
+//         }
+//     }
+//     return unique;
+// }
+// console.log(getUniqueVal([1, 2, 3, 3, 5, 5]));
 
 // 	97.	Write a program to merge two sorted arrays into one sorted array.
+// let arr1 = [7, 5, 3, 2, 9];
+// let arr2 = [1, 4, 8, 2, 10];
+// let finalArr = [...arr1, ...arr2].sort((a, b) => a-b);
+// console.log(finalArr);
 
 // 	98.	Create a function to count the number of words in a string.
 // function countWord(str) {
@@ -1291,6 +1377,27 @@ let date = new Date();
 
 
 // 	99.	Write a program to toggle a button’s background color when clicked.
+// let btn = document.querySelector("#btn");
+// btn.addEventListener('click', () => {
+//     if (btn.innerHTML === "Click") {
+//         btn.style.backgroundColor = "red";
+//         btn.innerHTML = "Clicked";
+//     } else {
+//         btn.style.backgroundColor = "indigo";
+//         btn.innerHTML = "Click";
+//     }
+// });
+
+
 // 	100. Write a function to check if all elements in an array are greater than a specific value.
+// function findGreater(arr, val) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] <= val) {
+//             return "All elements are not greater than this value";
+//         }
+//     }
+//     return "All elements are greater than this value";
+// }
+// console.log(findGreater([9, 7, 3, 4, 5], 3));
 
 // These questions cover a wide range of fundamental JavaScript concepts. Let me know if you’d like further clarification or solutions for any of these!
