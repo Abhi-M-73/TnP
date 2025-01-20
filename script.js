@@ -680,6 +680,7 @@
 // 	19.	Create a variable with undefined and log its type.
 // let val = undefined;
 // console.log(typeof val);    //undefined
+
 // 	20.	Use const to create an array. Try reassigning the array and observe the error.
 // const arr = [];
 // arr = {};
@@ -744,9 +745,11 @@
 
 // 	28.	Use a for loop to reverse an array [1, 2, 3, 4].
 // let array = [1, 2, 3, 4];
+// let reverseArray = [];
 // for (let i = array.length-1 ; i >= 0; i--) {
-//     console.log(array[i])
+//     reverseArray.push(array[i]);
 // }
+// console.log(reverseArray); 
 
 // 	29.	Write a while loop that logs numbers from 1 to 100 divisible by 5.
 // let i = 1;
@@ -1073,7 +1076,7 @@
 
 // 	63.	Access and log the value of the city property using bracket notation.
 // let obj = {
-//     name: "abhi",
+//     name: "abhi", 
 //     age: 22,
 //     city: "Bhopal",
 // }
@@ -1591,7 +1594,7 @@
 // console.log(productOfAllNumber);  //  50
 
 
-// 3. Arrays and Objects (10 Questions)
+// 3. Arrays and Objects (10 Questions) 
 // 	21.	Write a program to merge two arrays and remove duplicate values.
 // let arr1 = [1, 2, 3];
 // let arr2 = [1, 4, 5];
@@ -1638,7 +1641,7 @@
 // let arr = [1, 2, 3, 4, 5, 8, 9, 10];
 // let n = 4
 // console.log(leftRotate(arr, n));
-	
+
 
 // 	26.	Use .find() to locate the first even number in an array.
 // let arr = [1, 9, 3, 4, 5];
@@ -1646,6 +1649,11 @@
 // console.log(res);    // 4
 
 // 	27.	Create a function that flattens a nested array (e.g., [1, [2, [3]]] → [1, 2, 3]).
+// function flattenArray(arr) {
+//     return arr.flat(Infinity);
+// }
+// const nestedArray = [1, [2, [3]]];
+// console.log(flattenArray(nestedArray)); // [1, 2, 3]
 
 
 // 	28.	Write a program that counts how many times each element appears in an array.
@@ -1667,27 +1675,140 @@
 // console.log(resOfSome);      //   true
 
 // 	30.	Sort an array of objects by a specific property.
+// let arrOfObj = [{ name: "abhi", age: 21 }, { name: "kunal", age: 28 }, { name: "sid", age: 24 }]
+// let sortByAge = arrOfObj.sort((a, b) => a.age - b.age);
+// console.log(sortByAge);
+// // let sortByName = arrOfObj.sort((a, b) => a.name.localeCompare(b.name));
+// // console.log(sortByName);
 
 // 4. Functions and Closures (10 Questions)
 // 	31.	Write a function that returns another function to calculate the power of a number.
+// function calculatePower(num) {
+//     let res;
+//     return function () {
+//         res = Math.pow(num, 2);
+//         console.log(res);
+//     }
+// }
+// let ans = calculatePower(5)
+// ans();
+
 // 	32.	Create a recursive function to calculate the Fibonacci sequence up to n terms.
+// function fibonacci(n) {
+//     if (n < 2)
+//         return 1;
+//     return fibonacci(n - 1) + fibonacci(n - 2);
+// }
+// console.log(fibonacci(5));
+
 // 	33.	Write a function that uses closures to create a counter.
+// function counter(num) {
+//     let count = 1;
+//     return function () {
+//         let intervalId = setInterval(() => {
+//             console.log(count)
+//             if (count === num) {
+//                 clearInterval(intervalId);
+//             }
+//             count++;
+//         }, 1000)
+//     }
+// }
+// let ans = counter(10);
+// ans();
+
 // 	34.	Create a function that memoizes the result of a computation.
+
 // 	35.	Write a function to debounce a button click event.
 // 	36.	Implement a function that throttles an API call.
 // 	37.	Create a higher-order function that applies a callback to each element of an array.
 // 	38.	Write a function that calculates the GCD (Greatest Common Divisor) of two numbers.
+
 // 	39.	Create a function that accepts an array of functions and executes them sequentially.
+// let arr = [function sayHello() { console.log("hello") }, function sayHey() { console.log("hey") }, function sayHi() { console.log("hi") }]
+// function executesAllFn(arr) {
+//     arr.map((elem) => elem())
+// }
+// executesAllFn(arr);
+
 // 	40.	Write a function to curry a simple mathematical operation.
 
 // 5. Strings and Regular Expressions (10 Questions)
 // 	41.	Write a program to reverse the words in a sentence but not the sentence itself.
+// let str = "JavaScript is a fun"
+// let strArray = str.split(' ');
+// let res = "";
+// for (let i = 0; i < strArray.length; i++) {
+//     for (let j = strArray.length-1; j < 0; j++) {
+//         strArray = [...strArray[j]];
+//     }
+// }
+// console.log(strArray)
+
 // 	42.	Use a regex to validate if a string is a valid email address.
+// function validateEmail(email){
+//     if (email.match(/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$/)) {
+//         console.log("This is a valid email");
+//     }else{
+//         console.log("This is not a valid email");
+//     }
+// }
+// validateEmail("ak@exapmle.com");    //   This is a valid email
+// validateEmail("akhjshd");           //   This is not a valid email
+
 // 	43.	Create a function to check if a string contains only digits.
+// function checkStr(str) {
+//     let digits = "0123456789";
+//     for (i = 0; i < str.length; i++) {
+//         if (!digits.includes(str[i])) {
+//             console.log("This string does not contain only numbers")
+//             return;
+//         }
+//     }
+//     console.log("This string contains only numbers")
+// }
+// checkStr("abc");    //    This string do not contain only numbers
+// checkStr("123");    //    This string contains only numbers
+// checkStr("ab2c")    //    This string does not contain only numbers
+
 // 	44.	Write a function to extract all numbers from a string and return them as an array.
+// function filterNumber(str) {
+//     let digits = "0123456789";
+//     let numArray = [];
+//     for (let i = 0; i < str.length; i++) {
+//         if (digits.includes(str[i])) {
+//             numArray.push(str[i]);
+//         }
+//     }
+//     if (numArray.length === 0) {
+//         return "There are no numbers in this string.";
+//     }
+//     return numArray;
+// }
+// console.log(filterNumber("a12b"));      //   [ '1', '2' ]
+// console.log(filterNumber("ab"));        //   There are no numbers in this string.
+
 // 	45.	Use .match() to find all occurrences of a word in a string.
+
 // 	46.	Create a program to capitalize the first letter of each word in a string.
+// function capitalizeWord(str) {
+//     res = str.split(" ").map((elem) => elem.charAt(0).toUpperCase() + elem.slice(1)).join(" ");
+//     return res;
+// }
+// console.log(capitalizeWord("hekk i am"))
+
 // 	47.	Write a function that removes duplicate characters from a string.
+// function removeDuplicates(str) {
+//     let res = "";
+//     for (let i = 0; i < str.length; i++) {
+//         if (!res.includes(str[i])) {
+//             res += str[i];
+//         }
+//     }
+//     console.log(res)
+// }
+// removeDuplicates("aass");
+
 // 	48.	Use a regex to replace multiple spaces with a single space.
 // 	49.	Write a function to check if a string is an anagram of another string.
 // 	50.	Create a function to count the frequency of each word in a string.

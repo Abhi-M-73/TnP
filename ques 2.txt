@@ -177,9 +177,11 @@ Here is a collection of 100 JavaScript questions, divided into groups of 10, bas
 	28.	Use a for loop to reverse an array [1, 2, 3, 4].
 	answer =>
 	let array = [1, 2, 3, 4];
+	let reverseArray = [];
 	for (let i = array.length-1 ; i >= 0; i--) {
-		console.log(array[i])
+		reverseArray.push(array[i]);
 	}
+	console.log(reverseArray);
 
 	29.	Write a while loop that logs numbers from 1 to 100 divisible by 5.
 	answer =>
